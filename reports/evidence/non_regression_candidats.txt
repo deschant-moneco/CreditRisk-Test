@@ -1,0 +1,41 @@
+### CREDITRISK_CANDIDATE_MODEL=models/candidates/model_v1.1.0.joblib pytest tests/test_regression.py
+tests/test_regression.py::test_nr1_contrat_api_sur_cas_golden PASSED     [  7%]
+tests/test_regression.py::test_nr2_sorties_pipeline_conformes PASSED     [ 14%]
+tests/test_regression.py::test_nr2_metadonnees_conformes PASSED          [ 21%]
+tests/test_regression.py::test_nr3_metriques_comparees_a_la_reference PASSED [ 28%]
+tests/test_regression.py::test_nr3_meme_version_predictions_identiques SKIPPED [ 35%]
+tests/test_regression.py::test_nr4_pas_de_baisse_excessive[rappel] PASSED [ 42%]
+tests/test_regression.py::test_nr4_pas_de_baisse_excessive[f1] PASSED    [ 50%]
+tests/test_regression.py::test_nr4_pas_de_baisse_excessive[auc] PASSED   [ 57%]
+tests/test_regression.py::test_nr4_le_detecteur_signale_un_modele_degrade PASSED [ 64%]
+tests/test_regression.py::test_nr4_le_detecteur_accepte_un_reentrainement_sain PASSED [ 71%]
+tests/test_regression.py::test_nr4_baisse_juste_au_dela_de_la_tolerance PASSED [ 78%]
+tests/test_regression.py::test_nr5_sauvegarde_rechargement PASSED        [ 85%]
+tests/test_regression.py::test_nr5_determinisme_entre_appels PASSED      [ 92%]
+tests/test_regression.py::test_nr_reference_coherente PASSED             [100%]
+======================== 13 passed, 1 skipped in 0.93s =========================
+### CREDITRISK_CANDIDATE_MODEL=models/candidates/model_v1.2.0.joblib pytest tests/test_regression.py
+tests/test_regression.py::test_nr1_contrat_api_sur_cas_golden PASSED     [  7%]
+tests/test_regression.py::test_nr2_sorties_pipeline_conformes PASSED     [ 14%]
+tests/test_regression.py::test_nr2_metadonnees_conformes PASSED          [ 21%]
+tests/test_regression.py::test_nr3_metriques_comparees_a_la_reference FAILED [ 28%]
+tests/test_regression.py::test_nr3_meme_version_predictions_identiques SKIPPED [ 35%]
+tests/test_regression.py::test_nr4_pas_de_baisse_excessive[rappel] FAILED [ 42%]
+tests/test_regression.py::test_nr4_pas_de_baisse_excessive[f1] FAILED    [ 50%]
+tests/test_regression.py::test_nr4_pas_de_baisse_excessive[auc] PASSED   [ 57%]
+tests/test_regression.py::test_nr4_le_detecteur_signale_un_modele_degrade PASSED [ 64%]
+tests/test_regression.py::test_nr4_le_detecteur_accepte_un_reentrainement_sain PASSED [ 71%]
+tests/test_regression.py::test_nr4_baisse_juste_au_dela_de_la_tolerance PASSED [ 78%]
+tests/test_regression.py::test_nr5_sauvegarde_rechargement PASSED        [ 85%]
+tests/test_regression.py::test_nr5_determinisme_entre_appels PASSED      [ 92%]
+tests/test_regression.py::test_nr_reference_coherente PASSED             [100%]
+E       AssertionError: [{'controle': 'auc (baisse max 0.02)', 'reference': 0.8363, 'candidat': 0.834, 'ecart': -0.0023, ...}, {'controle': 'rappel (baisse max 0.03)', 'reference': 0.5918, 'candidat': 0.1395, 'ecart': -0.4523, ...}, {'controle': 'f1 (baisse max 0.03)', 'reference': 0.5868, 'candidat': 0.2433, 'ecart': -0.3435, ...}, {'controle': 'precision (variation max ±0.05)', 'reference': 0.5819, 'candidat': 0.9535, 'ecart': 0.3716, ...}, {'controle': 'taux_defaut_predit (variation max ±0.05)', 'reference': 0.1993, 'candidat': 0.0287, 'ecart': -0.1706, ...}, {'controle': 'écart de probabilité max sur 50 cas golden (≤ 0.05)', 'reference': 0.0, 'candidat': 0.665664, 'ecart': 0.665664, ...}, ...]
+tests/test_regression.py:69: AssertionError
+E       AssertionError: {'controle': 'rappel (baisse max 0.03)', 'reference': 0.5918, 'candidat': 0.1395, 'ecart': -0.4523, ...}
+tests/test_regression.py:87: AssertionError
+E       AssertionError: {'controle': 'f1 (baisse max 0.03)', 'reference': 0.5868, 'candidat': 0.2433, 'ecart': -0.3435, ...}
+tests/test_regression.py:87: AssertionError
+FAILED tests/test_regression.py::test_nr3_metriques_comparees_a_la_reference
+FAILED tests/test_regression.py::test_nr4_pas_de_baisse_excessive[rappel] - A...
+FAILED tests/test_regression.py::test_nr4_pas_de_baisse_excessive[f1] - Asser...
+=================== 3 failed, 10 passed, 1 skipped in 1.01s ====================

@@ -1,0 +1,87 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      demo_echec:
+        description: "Activer le test volontairement défaillant (preuve que la CI bloque)"
+        type: boolean
+        default: false
+
+concurrency:
+  group: tests-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  qualite:
+    name: Qualité du code (Ruff)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Ruff lint
+        run: ruff check . --output-format=github
+      - name: Ruff format
+        run: ruff format --check .
+
+  tests:
+    name: Tests Pytest + couverture
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      CREDITRISK_DEMO_ECHEC: ${{ github.event_name == 'workflow_dispatch' && inputs.demo_echec && '1' || '0' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+          cache-dependency-path: requirements-dev.txt
+      - run: pip install -r requirements-dev.txt
+      - name: Vérifier l'intégrité du modèle versionné
+        run: |
+          python - <<'PY'
+          import json, hashlib
+          ref = json.load(open("models/baseline/reference.json"))
+          sha = hashlib.sha256(open("models/model.joblib", "rb").read()).hexdigest()
+          print("model.joblib", sha)
+          assert sha == ref["sha256"], "Le modèle déployé diffère de la référence figée"
+          PY
+      - name: Pytest
+        run: >
+          pytest
+          --cov --cov-report=term-missing --cov-report=xml --cov-report=html
+          --cov-fail-under=90
+          --junitxml=reports/junit.xml
+      - name: Résumé
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import xml.etree.ElementTree as ET
+          s = ET.parse("reports/junit.xml").getroot()
+          s = s if s.tag == "testsuite" else s[0]
+          print("## Résultats des tests")
+          print(f"| Tests | Échecs | Erreurs | Ignorés | Durée |\n|---|---|---|---|---|")
+          print(f"| {s.get('tests')} | {s.get('failures')} | {s.get('errors')} | {s.get('skipped')} | {float(s.get('time')):.1f} s |")
+          cov = ET.parse("coverage.xml").getroot()
+          print(f"\n**Couverture** : {float(cov.get('line-rate')) * 100:.1f} %")
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: rapports-tests
+          path: |
+            reports/junit.xml
+            coverage.xml
+            htmlcov/

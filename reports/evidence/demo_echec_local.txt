@@ -1,0 +1,7 @@
+E        +  where 422 = <Response [422 Unprocessable Entity]>.status_code
+
+tests/test_ci_demo_echec.py:19: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_ci_demo_echec.py::test_volontairement_defaillant - Assertio...
+1 failed in 1.16s
+code de sortie pytest : 1

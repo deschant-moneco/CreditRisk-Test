@@ -1,0 +1,486 @@
+{
+  "version": "1.0.0",
+  "sha256": "0258910e424dd19c71af4948ef720793c91e42aa988d3d19424f3952bb99ec60",
+  "metriques": {
+    "auc": 0.8363,
+    "rappel": 0.5918,
+    "precision": 0.5819,
+    "f1": 0.5868,
+    "exactitude": 0.8367,
+    "taux_defaut_reel": 0.196,
+    "taux_defaut_predit": 0.1993,
+    "n": 1500
+  },
+  "tolerances": {
+    "baisse_max": {
+      "auc": 0.02,
+      "rappel": 0.03,
+      "f1": 0.03
+    },
+    "avertissement": {
+      "precision": 0.05,
+      "taux_defaut_predit": 0.05
+    },
+    "ecart_proba_max_meme_version": 1e-09,
+    "ecart_proba_max_nouvelle_version": 0.05,
+    "part_decisions_modifiees_max": 0.1
+  },
+  "golden": {
+    "entrees": [
+      {
+        "age": 23,
+        "revenu_mensuel": 218000.0,
+        "montant_credit": 1000000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 5.0
+      },
+      {
+        "age": 25,
+        "revenu_mensuel": 393000.0,
+        "montant_credit": 3730000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 7.0
+      },
+      {
+        "age": 54,
+        "revenu_mensuel": 270000.0,
+        "montant_credit": 1120000.0,
+        "duree_mois": 60,
+        "anciennete_activite": 1.5
+      },
+      {
+        "age": 42,
+        "revenu_mensuel": 136000.0,
+        "montant_credit": 970000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 8.5
+      },
+      {
+        "age": 53,
+        "revenu_mensuel": 381000.0,
+        "montant_credit": 1130000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 2.5
+      },
+      {
+        "age": 43,
+        "revenu_mensuel": 114000.0,
+        "montant_credit": 990000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 3.0
+      },
+      {
+        "age": 65,
+        "revenu_mensuel": 467000.0,
+        "montant_credit": 3570000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 2.5
+      },
+      {
+        "age": 54,
+        "revenu_mensuel": 135000.0,
+        "montant_credit": 760000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 12.5
+      },
+      {
+        "age": 43,
+        "revenu_mensuel": 246000.0,
+        "montant_credit": 1960000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 4.5
+      },
+      {
+        "age": 47,
+        "revenu_mensuel": 347000.0,
+        "montant_credit": 3370000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 3.5
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 56000.0,
+        "montant_credit": 600000.0,
+        "duree_mois": 3,
+        "anciennete_activite": 3.0
+      },
+      {
+        "age": 26,
+        "revenu_mensuel": 322000.0,
+        "montant_credit": 2500000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 7.5
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 91000.0,
+        "montant_credit": 570000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 8.0
+      },
+      {
+        "age": 40,
+        "revenu_mensuel": 103000.0,
+        "montant_credit": 600000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 4.5
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 432000.0,
+        "montant_credit": 4130000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 7.5
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 133000.0,
+        "montant_credit": 820000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 3.5
+      },
+      {
+        "age": 59,
+        "revenu_mensuel": 153000.0,
+        "montant_credit": 1330000.0,
+        "duree_mois": 9,
+        "anciennete_activite": 12.0
+      },
+      {
+        "age": 55,
+        "revenu_mensuel": 439000.0,
+        "montant_credit": 2600000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 2.5
+      },
+      {
+        "age": 29,
+        "revenu_mensuel": 190000.0,
+        "montant_credit": 1190000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 1.0
+      },
+      {
+        "age": 23,
+        "revenu_mensuel": 345000.0,
+        "montant_credit": 410000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 5.0
+      },
+      {
+        "age": 32,
+        "revenu_mensuel": 160000.0,
+        "montant_credit": 1300000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 6.0
+      },
+      {
+        "age": 56,
+        "revenu_mensuel": 192000.0,
+        "montant_credit": 1050000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 4.5
+      },
+      {
+        "age": 54,
+        "revenu_mensuel": 270000.0,
+        "montant_credit": 2990000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 3.0
+      },
+      {
+        "age": 31,
+        "revenu_mensuel": 233000.0,
+        "montant_credit": 700000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 9.5
+      },
+      {
+        "age": 46,
+        "revenu_mensuel": 139000.0,
+        "montant_credit": 1310000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 8.5
+      },
+      {
+        "age": 35,
+        "revenu_mensuel": 187000.0,
+        "montant_credit": 2170000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 1.5
+      },
+      {
+        "age": 47,
+        "revenu_mensuel": 109000.0,
+        "montant_credit": 320000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 9.0
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 198000.0,
+        "montant_credit": 1570000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 12.0
+      },
+      {
+        "age": 40,
+        "revenu_mensuel": 203000.0,
+        "montant_credit": 770000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 5.0
+      },
+      {
+        "age": 31,
+        "revenu_mensuel": 153000.0,
+        "montant_credit": 1090000.0,
+        "duree_mois": 9,
+        "anciennete_activite": 5.0
+      },
+      {
+        "age": 40,
+        "revenu_mensuel": 748000.0,
+        "montant_credit": 6490000.0,
+        "duree_mois": 3,
+        "anciennete_activite": 5.5
+      },
+      {
+        "age": 48,
+        "revenu_mensuel": 291000.0,
+        "montant_credit": 430000.0,
+        "duree_mois": 18,
+        "anciennete_activite": 11.0
+      },
+      {
+        "age": 54,
+        "revenu_mensuel": 145000.0,
+        "montant_credit": 380000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 4.5
+      },
+      {
+        "age": 26,
+        "revenu_mensuel": 536000.0,
+        "montant_credit": 5740000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 1.0
+      },
+      {
+        "age": 48,
+        "revenu_mensuel": 180000.0,
+        "montant_credit": 170000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 3.5
+      },
+      {
+        "age": 43,
+        "revenu_mensuel": 150000.0,
+        "montant_credit": 960000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 3.0
+      },
+      {
+        "age": 39,
+        "revenu_mensuel": 127000.0,
+        "montant_credit": 420000.0,
+        "duree_mois": 3,
+        "anciennete_activite": 4.0
+      },
+      {
+        "age": 34,
+        "revenu_mensuel": 69000.0,
+        "montant_credit": 140000.0,
+        "duree_mois": 48,
+        "anciennete_activite": 8.0
+      },
+      {
+        "age": 52,
+        "revenu_mensuel": 587000.0,
+        "montant_credit": 5420000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 2.0
+      },
+      {
+        "age": 60,
+        "revenu_mensuel": 218000.0,
+        "montant_credit": 350000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 4.5
+      },
+      {
+        "age": 31,
+        "revenu_mensuel": 292000.0,
+        "montant_credit": 1540000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 5.0
+      },
+      {
+        "age": 55,
+        "revenu_mensuel": 272000.0,
+        "montant_credit": 190000.0,
+        "duree_mois": 24,
+        "anciennete_activite": 4.5
+      },
+      {
+        "age": 30,
+        "revenu_mensuel": 455000.0,
+        "montant_credit": 300000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 9.5
+      },
+      {
+        "age": 37,
+        "revenu_mensuel": 308000.0,
+        "montant_credit": 1270000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 2.5
+      },
+      {
+        "age": 27,
+        "revenu_mensuel": 393000.0,
+        "montant_credit": 3830000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 8.5
+      },
+      {
+        "age": 29,
+        "revenu_mensuel": 191000.0,
+        "montant_credit": 470000.0,
+        "duree_mois": 12,
+        "anciennete_activite": 2.5
+      },
+      {
+        "age": 41,
+        "revenu_mensuel": 246000.0,
+        "montant_credit": 1660000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 2.5
+      },
+      {
+        "age": 62,
+        "revenu_mensuel": 293000.0,
+        "montant_credit": 820000.0,
+        "duree_mois": 36,
+        "anciennete_activite": 3.0
+      },
+      {
+        "age": 40,
+        "revenu_mensuel": 109000.0,
+        "montant_credit": 880000.0,
+        "duree_mois": 3,
+        "anciennete_activite": 11.5
+      },
+      {
+        "age": 47,
+        "revenu_mensuel": 286000.0,
+        "montant_credit": 1730000.0,
+        "duree_mois": 6,
+        "anciennete_activite": 9.5
+      }
+    ],
+    "probabilites": [
+      0.08493668817,
+      0.121520300392,
+      0.057945737036,
+      0.053886964586,
+      0.129385487636,
+      0.115902447053,
+      0.564020372322,
+      0.203582569828,
+      0.072877623641,
+      0.113743156238,
+      0.999589347169,
+      0.548008251731,
+      0.078937897235,
+      0.122047052893,
+      0.060820162621,
+      0.16985941394,
+      0.220101966655,
+      0.086108859995,
+      0.590457823317,
+      0.054453852309,
+      0.232204425061,
+      0.34070257077,
+      0.205095192246,
+      0.032500271226,
+      0.12250472283,
+      0.153772624288,
+      0.035236526318,
+      0.039346070842,
+      0.051395176163,
+      0.322021901347,
+      0.990139929568,
+      0.018173578613,
+      0.052281223602,
+      0.11658604415,
+      0.042654800587,
+      0.108768325498,
+      0.544622878858,
+      0.044906557536,
+      0.074410501422,
+      0.036904844052,
+      0.118077013761,
+      0.02959107733,
+      0.018125916293,
+      0.062128878037,
+      0.204982756228,
+      0.090746030208,
+      0.560021916011,
+      0.042863446225,
+      0.982231316527,
+      0.265631192598
+    ],
+    "decisions": [
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "defavorable",
+      "examen_approfondi",
+      "favorable",
+      "favorable",
+      "defavorable",
+      "defavorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "examen_approfondi",
+      "examen_approfondi",
+      "favorable",
+      "defavorable",
+      "favorable",
+      "examen_approfondi",
+      "defavorable",
+      "examen_approfondi",
+      "favorable",
+      "favorable",
+      "examen_approfondi",
+      "favorable",
+      "favorable",
+      "favorable",
+      "defavorable",
+      "defavorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "defavorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "favorable",
+      "examen_approfondi",
+      "favorable",
+      "defavorable",
+      "favorable",
+      "defavorable",
+      "examen_approfondi"
+    ]
+  }
+}

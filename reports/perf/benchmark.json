@@ -1,0 +1,116 @@
+{
+  "configuration": {
+    "os": "Darwin 25.5.0 (arm64)",
+    "cpu": "Apple M3 Pro",
+    "coeurs_logiques": 12,
+    "python": "3.12.8",
+    "scikit_learn": "1.9.1",
+    "fastapi": "0.165.0",
+    "uvicorn": "0.54.0",
+    "serveur": "uvicorn, 1 worker, boucle asyncio par défaut, logs d'accès désactivés",
+    "client": "httpx (même machine, connexions keep-alive)"
+  },
+  "objectifs": {
+    "api_p95_ms_10_clients": 200.0,
+    "debit_min_rps_10_clients": 50.0,
+    "inference_p95_ms": 10.0
+  },
+  "inference": {
+    "modele_seul": {
+      "n": 5000,
+      "moyenne_ms": 0.107,
+      "p50_ms": 0.107,
+      "p95_ms": 0.11,
+      "p99_ms": 0.117,
+      "max_ms": 0.171
+    },
+    "validation_pretraitement_modele": {
+      "n": 5000,
+      "moyenne_ms": 0.122,
+      "p50_ms": 0.122,
+      "p95_ms": 0.125,
+      "p99_ms": 0.131,
+      "max_ms": 0.493
+    }
+  },
+  "api_sequentielle": {
+    "n": 1000,
+    "moyenne_ms": 0.629,
+    "p50_ms": 0.601,
+    "p95_ms": 0.665,
+    "p99_ms": 0.737,
+    "max_ms": 21.615
+  },
+  "charge_progressive": [
+    {
+      "clients": 1,
+      "n": 100,
+      "moyenne_ms": 0.581,
+      "p50_ms": 0.567,
+      "p95_ms": 0.634,
+      "p99_ms": 0.697,
+      "max_ms": 1.103,
+      "debit_rps": 1500.9,
+      "erreurs": 0,
+      "taux_erreur": 0.0,
+      "duree_palier_s": 0.07
+    },
+    {
+      "clients": 5,
+      "n": 500,
+      "moyenne_ms": 1.835,
+      "p50_ms": 1.825,
+      "p95_ms": 2.45,
+      "p99_ms": 3.177,
+      "max_ms": 3.342,
+      "debit_rps": 1759.8,
+      "erreurs": 0,
+      "taux_erreur": 0.0,
+      "duree_palier_s": 0.28
+    },
+    {
+      "clients": 10,
+      "n": 1000,
+      "moyenne_ms": 3.718,
+      "p50_ms": 3.493,
+      "p95_ms": 4.89,
+      "p99_ms": 6.285,
+      "max_ms": 23.11,
+      "debit_rps": 1014.5,
+      "erreurs": 0,
+      "taux_erreur": 0.0,
+      "duree_palier_s": 0.99
+    },
+    {
+      "clients": 25,
+      "n": 2500,
+      "moyenne_ms": 8.661,
+      "p50_ms": 8.593,
+      "p95_ms": 11.839,
+      "p99_ms": 14.633,
+      "max_ms": 23.782,
+      "debit_rps": 956.7,
+      "erreurs": 0,
+      "taux_erreur": 0.0,
+      "duree_palier_s": 2.61
+    },
+    {
+      "clients": 50,
+      "n": 5000,
+      "moyenne_ms": 17.307,
+      "p50_ms": 16.554,
+      "p95_ms": 27.305,
+      "p99_ms": 47.032,
+      "max_ms": 74.488,
+      "debit_rps": 960.4,
+      "erreurs": 0,
+      "taux_erreur": 0.0,
+      "duree_palier_s": 5.21
+    }
+  ],
+  "verdict": {
+    "inference_p95_ms": true,
+    "api_p95_ms_10_clients": true,
+    "debit_min_rps_10_clients": true
+  }
+}
