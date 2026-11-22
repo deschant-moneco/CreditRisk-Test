@@ -2,6 +2,12 @@
 
 [![tests](https://github.com/deschantkn/CreditRisk-Test/actions/workflows/tests.yml/badge.svg)](https://github.com/deschantkn/CreditRisk-Test/actions/workflows/tests.yml)
 
+| | |
+|---|---|
+| **Étudiant** | Deschant Kounou |
+| **Enseignant** | Dr. Moustapha Der |
+| **Cours** | Tests logiciels — évaluation formative 2 (M2) |
+
 Stratégie de test complète d'un système IA qui estime le **risque de défaut de remboursement**
 d'un demandeur de crédit (microfinance) : validation → prétraitement → modèle scikit-learn → API FastAPI.
 

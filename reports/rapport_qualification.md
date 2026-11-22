@@ -2,6 +2,9 @@
 
 | | |
 |---|---|
+| **Étudiant** | Deschant Kounou |
+| **Enseignant** | Dr. Moustapha Der |
+| **Cours** | Tests logiciels — évaluation formative 2 (M2) |
 | **Objet** | Qualification du prototype CreditRisk (API v1.0.0, modèle v1.0.0) en vue d'une phase pilote |
 | **Dépôt** | https://github.com/deschantkn/CreditRisk-Test |
 | **Date** | 22 novembre 2026 |
