@@ -1,6 +1,6 @@
 # CreditRisk-Test
 
-[![tests](https://github.com/deschant-moneco/CreditRisk-Test/actions/workflows/tests.yml/badge.svg)](https://github.com/deschant-moneco/CreditRisk-Test/actions/workflows/tests.yml)
+[![tests](https://github.com/deschantkn/CreditRisk-Test/actions/workflows/tests.yml/badge.svg)](https://github.com/deschantkn/CreditRisk-Test/actions/workflows/tests.yml)
 
 Stratégie de test complète d'un système IA qui estime le **risque de défaut de remboursement**
 d'un demandeur de crédit (microfinance) : validation → prétraitement → modèle scikit-learn → API FastAPI.

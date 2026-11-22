@@ -1,8 +1,8 @@
 # Activité 7 — Chaîne de tests automatisés (GitHub Actions)
 
-- **Dépôt** : https://github.com/deschant-moneco/CreditRisk-Test
+- **Dépôt** : https://github.com/deschantkn/CreditRisk-Test
 - **Workflow** : [`.github/workflows/tests.yml`](../.github/workflows/tests.yml) —
-  https://github.com/deschant-moneco/CreditRisk-Test/actions/workflows/tests.yml
+  https://github.com/deschantkn/CreditRisk-Test/actions/workflows/tests.yml
 
 ## 1. Ce que fait le workflow
 
@@ -25,16 +25,15 @@ réentraînement en CI), jeu d'évaluation figé (`data/test_set.csv`), graines 
 
 | Run | Déclencheur | Commit | Résultat | Détail |
 |---|---|---|---|---|
-| [#45079125769](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079125769) | push `main` | `4035e94` | ✅ **succès** | Ruff OK ; 208 réussis, 1 ignoré ; couverture 99,66 % |
-| [#45079231235](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079231235) | push `main` | `5527c03` | ✅ **succès** | idem (Ruff OK ; `208 passed, 1 skipped` ; couverture 99,66 %) |
-| [#45079750620](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079750620) | push `main` | `339f2cd` | ✅ **succès** | version finale avec les rapports |
-| [#45079322752](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079322752) | `workflow_dispatch`, `demo_echec=true` | `5527c03` | ❌ **échec attendu** | `FAILED tests/test_ci_demo_echec.py::test_volontairement_defaillant - AssertionError: échec volontaire : la CI doit être rouge` — `1 failed, 208 passed` |
-| [#45079240908](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079240908) — [PR #1](https://github.com/deschant-moneco/CreditRisk-Test/pull/1) | `pull_request` | `ed438bc` | ❌ **échec attendu** | la PR remplace le modèle par la version dégradée v1.2.0 : contrôle d'intégrité KO (« Le modèle déployé diffère de la référence figée ») **et** 5 tests en échec, dont `test_nr4_pas_de_baisse_excessive[rappel]` (0,5918 → 0,1395) et `[f1]` (0,5868 → 0,2433) |
+| [#45080180593](https://github.com/deschantkn/CreditRisk-Test/actions/runs/45080180593) | push `main` | `203791a` | ✅ **succès** | Ruff OK ; `208 passed, 1 skipped` ; couverture 99,66 % |
+| [#45080271149](https://github.com/deschantkn/CreditRisk-Test/actions/runs/45080271149) | `workflow_dispatch`, `demo_echec=true` | `203791a` | ❌ **échec attendu** | `FAILED tests/test_ci_demo_echec.py::test_volontairement_defaillant - AssertionError: échec volontaire : la CI doit être rouge` — `1 failed, 208 passed` |
+| [#45080185850](https://github.com/deschantkn/CreditRisk-Test/actions/runs/45080185850) — [PR #1](https://github.com/deschantkn/CreditRisk-Test/pull/1) | `pull_request` | `f370ce0` | ❌ **échec attendu** | la PR remplace le modèle par la version dégradée v1.2.0 : contrôle d'intégrité KO (« Le modèle déployé diffère de la référence figée ») **et** 5 tests en échec, dont `test_nr4_pas_de_baisse_excessive[rappel]` (0,5918 → 0,1395) et `[f1]` (0,5868 → 0,2433) |
 
-Les deux runs annulés (#45079204895, #45079218088) l'ont été automatiquement par la règle `concurrency`
-(nouveau commit poussé sur la même référence) ; ils ont été relancés (#45079322752, #45079240908).
+Historique : le dépôt a été créé sous un autre compte puis transféré, et l'auteur des commits a été réécrit
+(nouveaux identifiants de commits). Les runs antérieurs à la réécriture (#45079125769, #45079231235 verts ;
+#45079322752 et #45079240908 rouges attendus, avec les mêmes résultats) restent visibles dans l'onglet *Actions*.
 
-Extrait du journal du run #45079240908 (PR #1) :
+Extrait du journal du run de la PR #1 :
 
 ```
 AssertionError: Le modèle déployé diffère de la référence figée

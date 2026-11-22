@@ -3,7 +3,7 @@
 | | |
 |---|---|
 | **Objet** | Qualification du prototype CreditRisk (API v1.0.0, modèle v1.0.0) en vue d'une phase pilote |
-| **Dépôt** | https://github.com/deschant-moneco/CreditRisk-Test |
+| **Dépôt** | https://github.com/deschantkn/CreditRisk-Test |
 | **Date** | 22 novembre 2026 |
 | **Environnement** | Python 3.12, scikit-learn 1.9.1, FastAPI 0.165, Pytest 9.2, Ruff 0.17, GitHub Actions |
 | **Décision proposée** | **Apte techniquement à une phase pilote encadrée, sous conditions — non apte à une décision de crédit automatisée** |
