@@ -1,6 +1,6 @@
 ============================= test session starts ==============================
 platform darwin -- Python 3.12.8, pytest-9.2.0, pluggy-1.7.0 -- ./.venv/bin/python
-rootdir: /Users/deschant/Documents/msc/esmt/M2/Tests_Logiciels/eval_formative_2/CreditRisk-Test
+rootdir: .
 configfile: pyproject.toml
 testpaths: tests
 plugins: cov-7.1.0, locust-2.47.0, anyio-4.16.0

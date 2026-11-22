@@ -27,6 +27,7 @@ réentraînement en CI), jeu d'évaluation figé (`data/test_set.csv`), graines 
 |---|---|---|---|---|
 | [#45079125769](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079125769) | push `main` | `4035e94` | ✅ **succès** | Ruff OK ; 208 réussis, 1 ignoré ; couverture 99,66 % |
 | [#45079231235](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079231235) | push `main` | `5527c03` | ✅ **succès** | idem (Ruff OK ; `208 passed, 1 skipped` ; couverture 99,66 %) |
+| [#45079750620](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079750620) | push `main` | `339f2cd` | ✅ **succès** | version finale avec les rapports |
 | [#45079322752](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079322752) | `workflow_dispatch`, `demo_echec=true` | `5527c03` | ❌ **échec attendu** | `FAILED tests/test_ci_demo_echec.py::test_volontairement_defaillant - AssertionError: échec volontaire : la CI doit être rouge` — `1 failed, 208 passed` |
 | [#45079240908](https://github.com/deschant-moneco/CreditRisk-Test/actions/runs/45079240908) — [PR #1](https://github.com/deschant-moneco/CreditRisk-Test/pull/1) | `pull_request` | `ed438bc` | ❌ **échec attendu** | la PR remplace le modèle par la version dégradée v1.2.0 : contrôle d'intégrité KO (« Le modèle déployé diffère de la référence figée ») **et** 5 tests en échec, dont `test_nr4_pas_de_baisse_excessive[rappel]` (0,5918 → 0,1395) et `[f1]` (0,5868 → 0,2433) |
 
